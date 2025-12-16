@@ -1,0 +1,104 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tascom/pricing-scale",
+  "title": "Pricing at Scale",
+  "category": "tascom-blocks",
+  "description": "Pricing comparison cards showing cost at different team sizes",
+  "keywords": ["pricing", "scale", "cards", "team"],
+  "textdomain": "taskip-comparison",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "attributes": {
+    "sectionEyebrow": {
+      "type": "string",
+      "default": "Cost Analysis"
+    },
+    "sectionTitle": {
+      "type": "string",
+      "default": "Pricing at Scale"
+    },
+    "sectionDescription": {
+      "type": "string",
+      "default": "How costs compare as your team grows. Taskip offers flat per-workspace pricing."
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "teamSize": "3",
+          "taskipPrice": "$49",
+          "competitorPrice": "$57",
+          "savings": "",
+          "featured": false
+        },
+        {
+          "teamSize": "5",
+          "taskipPrice": "$49",
+          "competitorPrice": "$95",
+          "savings": "Save 48%",
+          "featured": false
+        },
+        {
+          "teamSize": "10",
+          "taskipPrice": "$49",
+          "competitorPrice": "$190",
+          "savings": "Save 74%",
+          "featured": true
+        },
+        {
+          "teamSize": "20",
+          "taskipPrice": "$49",
+          "competitorPrice": "$380",
+          "savings": "Save 87%",
+          "featured": false
+        }
+      ]
+    },
+    "taskipLabel": {
+      "type": "string",
+      "default": "Taskip"
+    },
+    "competitorLabel": {
+      "type": "string",
+      "default": "SuiteDash"
+    },
+    "featuredBadgeText": {
+      "type": "string",
+      "default": "RECOMMENDED"
+    },
+    "taskipPriceColor": {
+      "type": "string",
+      "default": "#2563eb"
+    },
+    "competitorPriceColor": {
+      "type": "string",
+      "default": "#9ca3af"
+    },
+    "savingsBgColor": {
+      "type": "string",
+      "default": "#dcfce7"
+    },
+    "savingsTextColor": {
+      "type": "string",
+      "default": "#166534"
+    },
+    "featuredBorderColor": {
+      "type": "string",
+      "default": "#2563eb"
+    },
+    "featuredBadgeBgColor": {
+      "type": "string",
+      "default": "#2563eb"
+    },
+    "featuredBadgeTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true
+  }
+}

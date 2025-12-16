@@ -1,0 +1,134 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tascom/verdict",
+  "version": "1.0.0",
+  "title": "Verdict",
+  "category": "tascom-blocks",
+  "icon": "awards",
+  "description": "Display a quick verdict section with key points",
+  "keywords": ["verdict", "comparison", "summary", "tldr"],
+  "textdomain": "taskip-comparison",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "labelText": {
+      "type": "string",
+      "default": "TL;DR — Quick Verdict"
+    },
+    "title": {
+      "type": "string",
+      "default": "Taskip is purpose-built for freelancers and digital agencies with AI features, service catalog, and transparent pricing. SuiteDash is a general business platform that can become complex and expensive as you grow."
+    },
+    "points": {
+      "type": "array",
+      "default": [
+        {
+          "icon": "lightbulb",
+          "heading": "AI-Powered Features",
+          "description": "Write proposals, emails, and content with built-in AI. SuiteDash has no AI features.",
+          "showIcon": true,
+          "useCustomImage": false,
+          "customImageUrl": "",
+          "customImageId": 0
+        },
+        {
+          "icon": "briefcase",
+          "heading": "Service Catalog",
+          "description": "Showcase services with self-checkout. Let clients buy without logging in.",
+          "showIcon": true,
+          "useCustomImage": false,
+          "customImageUrl": "",
+          "customImageId": 0
+        },
+        {
+          "icon": "currency",
+          "heading": "Predictable Pricing",
+          "description": "Flat rate per workspace. Add unlimited team members without extra costs.",
+          "showIcon": true,
+          "useCustomImage": false,
+          "customImageUrl": "",
+          "customImageId": 0
+        },
+        {
+          "icon": "refresh",
+          "heading": "Subscription Management",
+          "description": "Built-in retainer and recurring billing for productized services.",
+          "showIcon": true,
+          "useCustomImage": false,
+          "customImageUrl": "",
+          "customImageId": 0
+        }
+      ]
+    },
+    "sectionBgColor": {
+      "type": "string",
+      "default": "#0a0a0a"
+    },
+    "sectionTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "titleEmphasisColor": {
+      "type": "string",
+      "default": "#00c896"
+    },
+    "iconBgColor": {
+      "type": "string",
+      "default": "#0066FF"
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "boxBgColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.05)"
+    },
+    "boxBorderColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.08)"
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": "#9ca3af"
+    },
+    "paddingTopDesktop": {
+      "type": "number",
+      "default": 80
+    },
+    "paddingBottomDesktop": {
+      "type": "number",
+      "default": 80
+    },
+    "paddingTopTablet": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingBottomTablet": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingTopMobile": {
+      "type": "number",
+      "default": 40
+    },
+    "paddingBottomMobile": {
+      "type": "number",
+      "default": 40
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css"
+}

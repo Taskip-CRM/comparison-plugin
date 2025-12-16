@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tascom/trust-bar",
+  "version": "1.0.0",
+  "title": "Trust Bar",
+  "category": "tascom-blocks",
+  "icon": "star-filled",
+  "description": "Display trusted brands and company logos",
+  "keywords": ["trust", "brands", "logos", "companies"],
+  "textdomain": "taskip-comparison",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "trustLabel": {
+      "type": "string",
+      "default": "Trusted by 500+ agency owners worldwide"
+    },
+    "companies": {
+      "type": "array",
+      "default": [
+        {
+          "imageUrl": "",
+          "imageId": 0,
+          "altText": "Company Logo"
+        }
+      ]
+    },
+    "paddingTopDesktop": {
+      "type": "number",
+      "default": 40
+    },
+    "paddingBottomDesktop": {
+      "type": "number",
+      "default": 40
+    },
+    "paddingTopTablet": {
+      "type": "number",
+      "default": 30
+    },
+    "paddingBottomTablet": {
+      "type": "number",
+      "default": 30
+    },
+    "paddingTopMobile": {
+      "type": "number",
+      "default": 20
+    },
+    "paddingBottomMobile": {
+      "type": "number",
+      "default": 20
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css"
+}

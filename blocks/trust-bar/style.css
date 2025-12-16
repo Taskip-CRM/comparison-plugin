@@ -1,0 +1,86 @@
+/**
+ * Trust Bar Block - Frontend Styles
+ *
+ * @package Tascom
+ */
+
+/* CSS Variables */
+:root {
+    --tasp-comp-gray-200: #e5e7eb;
+    --tasp-comp-gray-500: #6b7280;
+    --tasp-comp-white: #ffffff;
+}
+
+/* Trust Bar */
+.tasp-comp-trust {
+    padding: 40px 0;
+    border-top: 1px solid var(--tasp-comp-gray-200);
+    border-bottom: 1px solid var(--tasp-comp-gray-200);
+    background: var(--tasp-comp-white);
+}
+
+.tasp-comp-trust__content {
+    text-align: center;
+}
+
+.tasp-comp-trust__label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--tasp-comp-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    margin-top: 0;
+}
+
+.tasp-comp-trust__logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.tasp-comp-trust__logo-item {
+    display: flex;
+    align-items: center;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.tasp-comp-trust__logo-item:hover {
+    opacity: 1;
+}
+
+.tasp-comp-trust__logo-img {
+    max-height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.tasp-comp-trust__logo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 48px;
+    background: var(--tasp-comp-gray-200);
+    color: var(--tasp-comp-gray-500);
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tasp-comp-trust {
+        padding: 30px 0;
+    }
+
+    .tasp-comp-trust__logos {
+        gap: 32px;
+    }
+
+    .tasp-comp-trust__logo-img {
+        max-height: 36px;
+    }
+}

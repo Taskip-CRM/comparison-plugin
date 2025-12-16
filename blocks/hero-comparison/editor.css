@@ -1,0 +1,21 @@
+/**
+ * Hero Comparison Block - Editor Styles
+ *
+ * @package Tascom
+ */
+
+/* Editor-specific styles */
+.editor-styles-wrapper .tasp-comp-hero {
+    border: 2px dashed #ddd;
+    margin: 20px 0;
+}
+
+.editor-styles-wrapper .tasp-comp-hero__badge svg {
+    width: 18px;
+    height: 18px;
+}
+
+.editor-styles-wrapper .tasp-comp-hero__cta-group a {
+    pointer-events: none;
+    cursor: default;
+}

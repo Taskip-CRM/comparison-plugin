@@ -1,0 +1,141 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tascom/hero-comparison",
+  "version": "1.0.0",
+  "title": "Hero Comparison",
+  "category": "tascom-blocks",
+  "icon": "megaphone",
+  "description": "Display a hero section comparing two products or services",
+  "keywords": ["comparison", "hero", "vs", "taskip"],
+  "textdomain": "taskip-comparison",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
+  },
+  "attributes": {
+    "badgeText": {
+      "type": "string",
+      "default": "Honest Comparison"
+    },
+    "title": {
+      "type": "string",
+      "default": "Taskip vs SuiteDash:"
+    },
+    "titleHighlight": {
+      "type": "string",
+      "default": "Which One is Right"
+    },
+    "titleEnd": {
+      "type": "string",
+      "default": "for Your Agency?"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "An honest, feature-by-feature comparison to help you choose the perfect client management platform. No hype—just facts."
+    },
+    "primaryButtonText": {
+      "type": "string",
+      "default": "Start Free Trial"
+    },
+    "primaryButtonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "secondaryButtonText": {
+      "type": "string",
+      "default": "Book a Demo"
+    },
+    "secondaryButtonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "heroImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "heroImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "heroImageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "fullWidth": {
+      "type": "boolean",
+      "default": false
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#1a1a1a"
+    },
+    "subtitleColor": {
+      "type": "string",
+      "default": "#6b7280"
+    },
+    "primaryButtonBgColor": {
+      "type": "string",
+      "default": "#0066FF"
+    },
+    "primaryButtonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "secondaryButtonBgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "secondaryButtonTextColor": {
+      "type": "string",
+      "default": "#1a1a1a"
+    },
+    "secondaryButtonBorderColor": {
+      "type": "string",
+      "default": "#6b7280"
+    },
+    "badgeTextColor": {
+      "type": "string",
+      "default": "#0066FF"
+    },
+    "badgeBgColor": {
+      "type": "string",
+      "default": "rgba(0, 102, 255, 0.1)"
+    },
+    "titleHighlightColor": {
+      "type": "string",
+      "default": "#0066FF"
+    },
+    "paddingTopDesktop": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingBottomDesktop": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingTopTablet": {
+      "type": "number",
+      "default": 40
+    },
+    "paddingBottomTablet": {
+      "type": "number",
+      "default": 40
+    },
+    "paddingTopMobile": {
+      "type": "number",
+      "default": 30
+    },
+    "paddingBottomMobile": {
+      "type": "number",
+      "default": 30
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css"
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tascom/highlights",
+  "title": "Key Differences",
+  "category": "tascom-blocks",
+  "description": "Highlight key feature differences with comparison cards",
+  "keywords": ["highlights", "features", "comparison", "differences"],
+  "textdomain": "taskip-comparison",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "attributes": {
+    "sectionLabel": {
+      "type": "string",
+      "default": "🎯 Key Differences"
+    },
+    "sectionTitle": {
+      "type": "string",
+      "default": "Features that matter most"
+    },
+    "sectionTitleEmphasis": {
+      "type": "string",
+      "default": "matter most"
+    },
+    "sectionDescription": {
+      "type": "string",
+      "default": "A deep dive into the capabilities that separate Taskip from SuiteDash"
+    },
+    "cards": {
+      "type": "array",
+      "default": []
+    },
+    "titleGradientStart": {
+      "type": "string",
+      "default": "#3b82f6"
+    },
+    "titleGradientEnd": {
+      "type": "string",
+      "default": "#10b981"
+    },
+    "badgeGradientStart": {
+      "type": "string",
+      "default": "#10b981"
+    },
+    "badgeGradientEnd": {
+      "type": "string",
+      "default": "#059669"
+    },
+    "badgeTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "winnerBgColor": {
+      "type": "string",
+      "default": "#eff6ff"
+    },
+    "winnerBorderColor": {
+      "type": "string",
+      "default": "#3b82f6"
+    },
+    "winnerTextColor": {
+      "type": "string",
+      "default": "#3b82f6"
+    },
+    "loserBgColor": {
+      "type": "string",
+      "default": "#f8fafc"
+    },
+    "loserTextColor": {
+      "type": "string",
+      "default": "#94a3b8"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tascom/pricing-comparison",
+  "title": "Pricing Comparison",
+  "category": "tascom-blocks",
+  "description": "Compare pricing between platforms with a comparison table",
+  "keywords": ["pricing", "comparison", "table", "cost"],
+  "textdomain": "taskip-comparison",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "attributes": {
+    "sectionEyebrow": {
+      "type": "string",
+      "default": "Pricing Comparison"
+    },
+    "sectionTitle": {
+      "type": "string",
+      "default": "See how costs compare as your team grows"
+    },
+    "textAlignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "rows": {
+      "type": "array",
+      "default": [
+        {
+          "teamSize": "3 Team Members",
+          "taskipPrice": "$49/mo",
+          "competitorPrice": "$57/mo",
+          "savings": ""
+        },
+        {
+          "teamSize": "5 Team Members",
+          "taskipPrice": "$49/mo",
+          "competitorPrice": "$95/mo",
+          "savings": "Save 48%"
+        },
+        {
+          "teamSize": "10 Team Members",
+          "taskipPrice": "$49/mo",
+          "competitorPrice": "$190/mo",
+          "savings": "Save 74%"
+        },
+        {
+          "teamSize": "20 Team Members",
+          "taskipPrice": "$49/mo",
+          "competitorPrice": "$380/mo",
+          "savings": "Save 87%"
+        }
+      ]
+    },
+    "headerLeft": {
+      "type": "string",
+      "default": "Team Size"
+    },
+    "headerTaskip": {
+      "type": "string",
+      "default": "Taskip"
+    },
+    "headerCompetitor": {
+      "type": "string",
+      "default": "SuiteDash"
+    },
+    "noteText": {
+      "type": "string",
+      "default": "💡 <strong>Pro tip:</strong> With Taskip, you pay the same price whether you have 3 or 30 team members."
+    },
+    "showNote": {
+      "type": "boolean",
+      "default": true
+    },
+    "taskipPriceColor": {
+      "type": "string",
+      "default": "#3b82f6"
+    },
+    "competitorPriceColor": {
+      "type": "string",
+      "default": "#64748b"
+    },
+    "savingsBgColor": {
+      "type": "string",
+      "default": "#10b98133"
+    },
+    "savingsTextColor": {
+      "type": "string",
+      "default": "#059669"
+    },
+    "headerBgColor": {
+      "type": "string",
+      "default": "#1f2937"
+    },
+    "headerTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true
+  }
+}

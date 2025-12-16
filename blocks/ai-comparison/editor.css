@@ -1,0 +1,11 @@
+/**
+ * AI Comparison Block - Editor Styles
+ *
+ * @package Tascom
+ */
+
+/* Editor-specific styles */
+.editor-styles-wrapper .tasp-comp-ai {
+    border: 2px dashed #ddd;
+    margin: 20px 0;
+}

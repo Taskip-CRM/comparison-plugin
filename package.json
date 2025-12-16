@@ -1,0 +1,35 @@
+{
+  "name": "taskip-comparison",
+  "version": "1.0.0",
+  "description": "Custom post type for comparison content with Gutenberg support",
+  "author": "Taskip",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "npm run build:hero && npm run build:trust && npm run build:verdict && npm run build:migration && npm run build:ai && npm run build:highlights && npm run build:pricing && npm run build:features && npm run build:scale",
+    "build:hero": "wp-scripts build blocks/hero-comparison/index.js --output-path=blocks/hero-comparison/build",
+    "build:trust": "wp-scripts build blocks/trust-bar/index.js --output-path=blocks/trust-bar/build",
+    "build:verdict": "wp-scripts build blocks/verdict/index.js --output-path=blocks/verdict/build",
+    "build:migration": "wp-scripts build blocks/migration/index.js --output-path=blocks/migration/build",
+    "build:ai": "wp-scripts build blocks/ai-comparison/index.js --output-path=blocks/ai-comparison/build",
+    "build:highlights": "wp-scripts build blocks/highlights/index.js --output-path=blocks/highlights/build",
+    "build:pricing": "wp-scripts build blocks/pricing-comparison/index.js --output-path=blocks/pricing-comparison/build",
+    "build:features": "wp-scripts build blocks/feature-comparison/index.js --output-path=blocks/feature-comparison/build",
+    "build:scale": "wp-scripts build blocks/pricing-scale/index.js --output-path=blocks/pricing-scale/build",
+    "start": "wp-scripts start blocks/hero-comparison/index.js --output-path=blocks/hero-comparison/build",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^27.0.0"
+  },
+  "dependencies": {
+    "@wordpress/block-editor": "^13.0.0",
+    "@wordpress/blocks": "^13.0.0",
+    "@wordpress/components": "^28.0.0",
+    "@wordpress/element": "^6.0.0",
+    "@wordpress/i18n": "^5.0.0"
+  }
+}

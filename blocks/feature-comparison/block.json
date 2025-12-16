@@ -1,0 +1,116 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tascom/feature-comparison",
+  "title": "Feature-by-Feature Comparison",
+  "category": "tascom-blocks",
+  "description": "Detailed feature comparison table with categories",
+  "keywords": ["comparison", "features", "table", "detailed"],
+  "textdomain": "taskip-comparison",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "attributes": {
+    "sectionEyebrow": {
+      "type": "string",
+      "default": "Detailed Comparison"
+    },
+    "sectionTitle": {
+      "type": "string",
+      "default": "Feature-by-Feature Analysis"
+    },
+    "headerColumn1": {
+      "type": "string",
+      "default": "Feature"
+    },
+    "headerColumn2": {
+      "type": "string",
+      "default": "Taskip"
+    },
+    "headerColumn3": {
+      "type": "string",
+      "default": "SuiteDash"
+    },
+    "checkColor": {
+      "type": "string",
+      "default": "#10b981"
+    },
+    "crossColor": {
+      "type": "string",
+      "default": "#ef4444"
+    },
+    "customBadgeColor": {
+      "type": "string",
+      "default": "#2563eb"
+    },
+    "limitedBadgeColor": {
+      "type": "string",
+      "default": "#f59e0b"
+    },
+    "comingSoonBadgeColor": {
+      "type": "string",
+      "default": "#8b5cf6"
+    },
+    "paidBadgeColor": {
+      "type": "string",
+      "default": "#ec4899"
+    },
+    "headerBgColor": {
+      "type": "string",
+      "default": "#111827"
+    },
+    "headerTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "categoryBgColor": {
+      "type": "string",
+      "default": "#f3f4f6"
+    },
+    "categoryTextColor": {
+      "type": "string",
+      "default": "#6b7280"
+    },
+    "categories": {
+      "type": "array",
+      "default": [
+        {
+          "name": "AI & AUTOMATION",
+          "rows": [
+            {
+              "feature": "AI Content Writer",
+              "col2Type": "check",
+              "col2Badge": "Winner",
+              "col3Type": "cross"
+            },
+            {
+              "feature": "Smart Suggestions",
+              "col2Type": "check",
+              "col3Type": "cross"
+            }
+          ]
+        },
+        {
+          "name": "PROJECT MANAGEMENT",
+          "rows": [
+            {
+              "feature": "Gantt Charts",
+              "col2Type": "check",
+              "col2Badge": "Winner",
+              "col3Type": "cross"
+            },
+            {
+              "feature": "Time Tracking",
+              "col2Type": "check",
+              "col3Type": "check"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true
+  }
+}

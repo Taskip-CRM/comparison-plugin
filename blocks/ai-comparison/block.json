@@ -1,0 +1,130 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tascom/ai-comparison",
+  "title": "AI Comparison",
+  "category": "tascom-blocks",
+  "description": "Ask AI assistants about comparison",
+  "keywords": ["ai", "chatgpt", "claude", "comparison"],
+  "textdomain": "taskip-comparison",
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Ask AI about Taskip vs SuiteDash"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Get an unbiased summary from your favorite AI assistant"
+    },
+    "leftIconUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "rightIconUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "buttons": {
+      "type": "array",
+      "default": [
+        {
+          "text": "Ask ChatGPT",
+          "url": "https://chatgpt.com/",
+          "iconUrl": "https://wcr2.taskip.net/chatgpt.png",
+          "prompt": "Compare Taskip vs SuiteDash for agency management"
+        },
+        {
+          "text": "Ask Claude",
+          "url": "https://claude.ai/new",
+          "iconUrl": "https://wcr2.taskip.net/claude.svg",
+          "prompt": "Compare Taskip vs SuiteDash for agency management"
+        },
+        {
+          "text": "Ask Perplexity",
+          "url": "https://www.perplexity.ai/search",
+          "iconUrl": "https://wcr2.taskip.net/perplexity.svg",
+          "prompt": "Compare Taskip vs SuiteDash"
+        }
+      ]
+    },
+    "sectionBgGradientStart": {
+      "type": "string",
+      "default": "#1f2937"
+    },
+    "sectionBgGradientEnd": {
+      "type": "string",
+      "default": "#0a0a0a"
+    },
+    "iconBgGradientStart": {
+      "type": "string",
+      "default": "#0066FF"
+    },
+    "iconBgGradientEnd": {
+      "type": "string",
+      "default": "#00D4FF"
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "subtitleColor": {
+      "type": "string",
+      "default": "#9ca3af"
+    },
+    "buttonBgColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.1)"
+    },
+    "buttonBorderColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.15)"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "buttonHoverBgColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.15)"
+    },
+    "buttonHoverBorderColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.25)"
+    },
+    "paddingTopDesktop": {
+      "type": "number",
+      "default": 80
+    },
+    "paddingBottomDesktop": {
+      "type": "number",
+      "default": 80
+    },
+    "paddingTopTablet": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingBottomTablet": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingTopMobile": {
+      "type": "number",
+      "default": 40
+    },
+    "paddingBottomMobile": {
+      "type": "number",
+      "default": 40
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true
+  }
+}

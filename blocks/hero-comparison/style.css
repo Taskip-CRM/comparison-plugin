@@ -1,0 +1,341 @@
+/**
+ * Hero Comparison Block - Frontend Styles
+ *
+ * @package Tascom
+ */
+
+/* CSS Variables */
+:root {
+    --tasp-comp-primary: #0066FF;
+    --tasp-comp-primary-light: rgba(0, 102, 255, 0.1);
+    --tasp-comp-dark: #1a1a1a;
+    --tasp-comp-gray-100: #f8f9fa;
+    --tasp-comp-gray-600: #6b7280;
+    --tasp-comp-gray-900: #111827;
+    --tasp-comp-white: #ffffff;
+    --tasp-comp-radius-lg: 12px;
+    --tasp-comp-radius-full: 9999px;
+    --tasp-comp-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --tasp-comp-font-display: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Container */
+.taskip-container-1408 {
+    max-width: 1408px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero */
+.tasp-comp-hero {
+    position: relative;
+    padding: 80px 0 100px;
+    background: linear-gradient(180deg, var(--tasp-comp-gray-100) 0%, var(--tasp-comp-white) 100%);
+    overflow: hidden;
+}
+
+.tasp-comp-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.03) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(0, 200, 150, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.tasp-comp-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.tasp-comp-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--tasp-comp-primary-light);
+    color: var(--tasp-comp-primary);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--tasp-comp-radius-full);
+    margin-bottom: 20px;
+}
+
+.tasp-comp-hero__badge svg {
+    width: 18px;
+    height: 18px;
+}
+
+.tasp-comp-hero__title {
+    font-family: var(--tasp-comp-font-display);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--tasp-comp-dark);
+    margin-bottom: 24px;
+}
+
+.tasp-comp-hero__title em {
+    font-style: italic;
+    color: var(--tasp-comp-primary);
+}
+
+.tasp-comp-hero__subtitle {
+    font-size: 18px;
+    color: var(--tasp-comp-gray-600);
+    margin-bottom: 32px;
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+.tasp-comp-hero__cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Buttons */
+.tasp-comp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.tasp-comp-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.tasp-comp-btn--large {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+.tasp-comp-btn--primary {
+    background: var(--tasp-comp-primary);
+    color: var(--tasp-comp-white);
+}
+
+.tasp-comp-btn--primary:hover {
+    background: #0052cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+.tasp-comp-btn--secondary {
+    background: var(--tasp-comp-white);
+    color: var(--tasp-comp-dark);
+    border: 2px solid var(--tasp-comp-gray-600);
+}
+
+.tasp-comp-btn--secondary:hover {
+    background: var(--tasp-comp-gray-100);
+    border-color: var(--tasp-comp-dark);
+    transform: translateY(-2px);
+}
+
+/* Logos Battle */
+.tasp-comp-hero__logos-battle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.tasp-comp-hero__logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px 48px;
+    background: var(--tasp-comp-white);
+    border-radius: var(--tasp-comp-radius-lg);
+    box-shadow: var(--tasp-comp-shadow-lg);
+    transition: transform 0.3s ease;
+}
+
+.tasp-comp-hero__logo-card:hover {
+    transform: translateY(-4px);
+}
+
+.tasp-comp-hero__logo-card--taskip {
+    border: 2px solid var(--tasp-comp-primary);
+    position: relative;
+}
+
+.tasp-comp-hero__logo-card--taskip::after {
+    content: 'YOU ARE HERE';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 12px;
+    background: var(--tasp-comp-primary);
+    color: var(--tasp-comp-white);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: var(--tasp-comp-radius-full);
+    white-space: nowrap;
+}
+
+.tasp-comp-hero__logo-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--tasp-comp-dark);
+}
+
+.tasp-comp-hero__vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--tasp-comp-gray-900);
+    color: var(--tasp-comp-white);
+    font-family: var(--tasp-comp-font-display);
+    font-size: 18px;
+    font-style: italic;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .tasp-comp-hero__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .tasp-comp-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .tasp-comp-hero__logos-battle {
+        gap: 30px;
+    }
+
+    .tasp-comp-hero__logo-card {
+        padding: 24px 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tasp-comp-hero {
+        padding: 60px 0 80px;
+    }
+
+    .tasp-comp-hero__title {
+        font-size: 2rem;
+    }
+
+    .tasp-comp-hero__subtitle {
+        font-size: 16px;
+    }
+
+    .tasp-comp-hero__cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tasp-comp-btn--large {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tasp-comp-hero__logos-battle {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tasp-comp-hero__vs {
+        width: 48px;
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .tasp-comp-hero__logo-card {
+        padding: 20px 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tasp-comp-hero__title {
+        font-size: 1.75rem;
+    }
+
+    .tasp-comp-hero__badge {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .tasp-comp-btn--large {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+}
+
+/* Full Width */
+.tasp-comp-hero--full-width {
+    width: 100%;
+}
+
+.tasp-comp-hero--full-width .taskip-container-1408 {
+    max-width: 1408px;
+    padding: 0 40px;
+}
+
+/* Hero Image */
+.tasp-comp-hero__image {
+    width: 100%;
+    border-radius: var(--tasp-comp-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--tasp-comp-shadow-lg);
+}
+
+.tasp-comp-hero__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Placeholder */
+.tasp-comp-hero__placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: #f9fafb;
+    border: 2px dashed #d1d5db;
+    border-radius: var(--tasp-comp-radius-lg);
+    text-align: center;
+}
+
+.tasp-comp-hero__placeholder svg {
+    opacity: 0.5;
+}
+
+.tasp-comp-hero__placeholder p {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+}

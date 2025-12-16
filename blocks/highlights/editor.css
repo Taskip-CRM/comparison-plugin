@@ -1,0 +1,10 @@
+/**
+ * Key Differences Block - Editor Styles
+ *
+ * @package Tascom
+ */
+
+.editor-styles-wrapper .tasp-comp-highlights-grid {
+    border: 2px dashed #ddd;
+    margin: 20px 0;
+}

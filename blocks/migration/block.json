@@ -1,0 +1,135 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tascom/migration",
+  "version": "1.0.0",
+  "title": "Migration Support",
+  "category": "tascom-blocks",
+  "icon": "migrate",
+  "description": "Display migration support section with features and testimonials",
+  "keywords": ["migration", "testimonial", "support", "onboarding"],
+  "textdomain": "taskip-comparison",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "eyebrowText": {
+      "type": "string",
+      "default": "Migration Support"
+    },
+    "eyebrowColor": {
+      "type": "string",
+      "default": "#60a5fa"
+    },
+    "title": {
+      "type": "string",
+      "default": "Seamless Transition"
+    },
+    "description": {
+      "type": "string",
+      "default": "Our dedicated team ensures a smooth migration with minimal disruption to your operations."
+    },
+    "features": {
+      "type": "array",
+      "default": [
+        "White-glove migration assistance",
+        "Complete data import from SuiteDash",
+        "Credit match for remaining subscription",
+        "Personalized onboarding session"
+      ]
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Request Migration Support"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "testimonials": {
+      "type": "array",
+      "default": [
+        {
+          "quote": "The migration from SuiteDash was handled entirely by Taskip's team. All our clients, projects, and data transferred in under 24 hours with zero downtime.",
+          "authorName": "Sarah Chen",
+          "authorRole": "Founder, Pixel Creative Agency",
+          "authorInitials": "SC"
+        },
+        {
+          "quote": "Taskip credited my remaining SuiteDash subscription. The onboarding call addressed all our team's questions. Excellent transition experience.",
+          "authorName": "Marcus Johnson",
+          "authorRole": "CEO, Digital Growth Studio",
+          "authorInitials": "MJ"
+        }
+      ]
+    },
+    "sectionBgColor": {
+      "type": "string",
+      "default": "#0a0a0a"
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#9ca3af"
+    },
+    "featureTextColor": {
+      "type": "string",
+      "default": "#d1d5db"
+    },
+    "featureCheckBgColor": {
+      "type": "string",
+      "default": "#10b981"
+    },
+    "testimonialBgColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.05)"
+    },
+    "testimonialBorderColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.1)"
+    },
+    "testimonialTextColor": {
+      "type": "string",
+      "default": "#d1d5db"
+    },
+    "buttonBgColor": {
+      "type": "string",
+      "default": "#0066FF"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "paddingTopDesktop": {
+      "type": "number",
+      "default": 80
+    },
+    "paddingBottomDesktop": {
+      "type": "number",
+      "default": 80
+    },
+    "paddingTopTablet": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingBottomTablet": {
+      "type": "number",
+      "default": 60
+    },
+    "paddingTopMobile": {
+      "type": "number",
+      "default": 40
+    },
+    "paddingBottomMobile": {
+      "type": "number",
+      "default": 40
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css"
+}

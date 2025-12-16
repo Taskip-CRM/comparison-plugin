@@ -1,0 +1,11 @@
+/**
+ * Migration Support Block - Editor Styles
+ *
+ * @package Tascom
+ */
+
+/* Editor-specific styles */
+.editor-styles-wrapper .tasp-comp-migration {
+    border: 2px dashed #ddd;
+    margin: 20px 0;
+}
