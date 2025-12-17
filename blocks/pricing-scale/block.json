@@ -11,10 +11,6 @@
   "editorStyle": "file:./editor.css",
   "style": "file:./style.css",
   "attributes": {
-    "sectionEyebrow": {
-      "type": "string",
-      "default": "Cost Analysis"
-    },
     "sectionTitle": {
       "type": "string",
       "default": "Pricing at Scale"
@@ -93,6 +89,10 @@
       "default": "#2563eb"
     },
     "featuredBadgeTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "sectionBgColor": {
       "type": "string",
       "default": "#ffffff"
     }

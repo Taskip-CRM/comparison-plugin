@@ -8,7 +8,6 @@ registerBlockType('tascom/pricing-scale', {
         const blockProps = useBlockProps();
 
         // Get attributes with defaults
-        const sectionEyebrow = attributes.sectionEyebrow || 'Cost Analysis';
         const sectionTitle = attributes.sectionTitle || 'Pricing at Scale';
         const sectionDescription = attributes.sectionDescription || 'How costs compare as your team grows. Taskip offers flat per-workspace pricing.';
         const taskipLabel = attributes.taskipLabel || 'Taskip';
@@ -23,6 +22,7 @@ registerBlockType('tascom/pricing-scale', {
         const featuredBorderColor = attributes.featuredBorderColor || '#2563eb';
         const featuredBadgeBgColor = attributes.featuredBadgeBgColor || '#2563eb';
         const featuredBadgeTextColor = attributes.featuredBadgeTextColor || '#ffffff';
+        const sectionBgColor = attributes.sectionBgColor || '#ffffff';
 
         const cards = attributes.cards || [
             {
@@ -84,11 +84,6 @@ registerBlockType('tascom/pricing-scale', {
                 <InspectorControls>
                     {/* Section Header Settings */}
                     <PanelBody title="Section Header" initialOpen={true}>
-                        <TextControl
-                            label="Eyebrow Text"
-                            value={sectionEyebrow}
-                            onChange={(value) => setAttributes({ sectionEyebrow: value })}
-                        />
                         <TextControl
                             label="Section Title"
                             value={sectionTitle}
@@ -224,12 +219,23 @@ registerBlockType('tascom/pricing-scale', {
                             }
                         ]}
                     />
+
+                    {/* Section Background */}
+                    <PanelColorSettings
+                        title="Section Background"
+                        colorSettings={[
+                            {
+                                value: sectionBgColor,
+                                onChange: (value) => setAttributes({ sectionBgColor: value }),
+                                label: 'Background Color'
+                            }
+                        ]}
+                    />
                 </InspectorControls>
 
-                <section className="section">
+                <section className="section" style={{ backgroundColor: sectionBgColor }}>
                     <div className="container">
                         <div className="section-header center">
-                            <p className="section-eyebrow">{sectionEyebrow}</p>
                             <h2 className="section-title">{sectionTitle}</h2>
                             <p className="section-desc">{sectionDescription}</p>
                         </div>

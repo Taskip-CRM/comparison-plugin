@@ -1,4 +1,11 @@
 /* Pricing at Scale Block */
+.section.wp-block-tascom-pricing-scale {
+    background-color: #0a0a0a;
+    .section-title{
+        color: #ffffff;
+    }
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

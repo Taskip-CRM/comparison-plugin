@@ -14,7 +14,6 @@ if (!defined('ABSPATH')) {
 }
 
 // Extract attributes with defaults
-$section_eyebrow = $attributes['sectionEyebrow'] ?? 'Cost Analysis';
 $section_title = $attributes['sectionTitle'] ?? 'Pricing at Scale';
 $section_description = $attributes['sectionDescription'] ?? 'How costs compare as your team grows. Taskip offers flat per-workspace pricing.';
 $taskip_label = $attributes['taskipLabel'] ?? 'Taskip';
@@ -30,6 +29,7 @@ $savings_text_color = $attributes['savingsTextColor'] ?? '#166534';
 $featured_border_color = $attributes['featuredBorderColor'] ?? '#2563eb';
 $featured_badge_bg_color = $attributes['featuredBadgeBgColor'] ?? '#2563eb';
 $featured_badge_text_color = $attributes['featuredBadgeTextColor'] ?? '#ffffff';
+$section_bg_color = $attributes['sectionBgColor'] ?? '#ffffff';
 
 // Get block wrapper attributes
 $wrapper_attributes = get_block_wrapper_attributes([
@@ -37,10 +37,9 @@ $wrapper_attributes = get_block_wrapper_attributes([
 ]);
 ?>
 
-<section <?php echo $wrapper_attributes; ?>>
+<section <?php echo $wrapper_attributes; ?> style="background-color: <?php echo esc_attr($section_bg_color); ?>;">
     <div class="container">
-        <div class="section-header center">
-            <p class="section-eyebrow"><?php echo esc_html($section_eyebrow); ?></p>
+        <div class="section-header center tascom-feature-comparison-section-header">
             <h2 class="section-title"><?php echo esc_html($section_title); ?></h2>
             <p class="section-desc"><?php echo esc_html($section_description); ?></p>
         </div>
