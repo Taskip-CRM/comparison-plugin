@@ -52,11 +52,11 @@
     },
     "sectionBgGradientStart": {
       "type": "string",
-      "default": "#1f2937"
+      "default": "#f8fafc"
     },
     "sectionBgGradientEnd": {
       "type": "string",
-      "default": "#0a0a0a"
+      "default": "#f1f5f9"
     },
     "iconBgGradientStart": {
       "type": "string",

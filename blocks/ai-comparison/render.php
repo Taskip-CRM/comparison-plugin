@@ -25,8 +25,8 @@ $buttons = $attributes['buttons'] ?? [
 ];
 
 // Color attributes
-$section_bg_gradient_start = $attributes['sectionBgGradientStart'] ?? '#1f2937';
-$section_bg_gradient_end = $attributes['sectionBgGradientEnd'] ?? '#0a0a0a';
+$section_bg_gradient_start = $attributes['sectionBgGradientStart'] ?? '#f8fafc';
+$section_bg_gradient_end = $attributes['sectionBgGradientEnd'] ?? '#f1f5f9';
 $icon_bg_gradient_start = $attributes['iconBgGradientStart'] ?? '#0066FF';
 $icon_bg_gradient_end = $attributes['iconBgGradientEnd'] ?? '#00D4FF';
 $icon_color = $attributes['iconColor'] ?? '#ffffff';

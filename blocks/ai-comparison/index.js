@@ -135,7 +135,7 @@ registerBlockType('tascom/ai-comparison', {
                 <section
                     className="tasp-comp-ai"
                     style={{
-                        background: 'linear-gradient(135deg, #1f2937 0%, #0a0a0a 100%)',
+                        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
                         paddingTop: '80px',
                         paddingBottom: '80px'
                     }}
