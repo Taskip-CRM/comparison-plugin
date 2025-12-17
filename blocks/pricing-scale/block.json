@@ -95,6 +95,18 @@
     "sectionBgColor": {
       "type": "string",
       "default": "#ffffff"
+    },
+    "sectionSpacing": {
+      "type": "number",
+      "default": 80
+    },
+    "cardPadding": {
+      "type": "number",
+      "default": 28
+    },
+    "gridGap": {
+      "type": "number",
+      "default": 20
     }
   },
   "supports": {

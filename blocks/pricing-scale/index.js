@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps, InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
-import { PanelBody, TextControl, Button, ToggleControl } from '@wordpress/components';
+import { PanelBody, TextControl, Button, ToggleControl, RangeControl } from '@wordpress/components';
 import './editor.css';
 
 registerBlockType('tascom/pricing-scale', {
@@ -23,6 +23,11 @@ registerBlockType('tascom/pricing-scale', {
         const featuredBadgeBgColor = attributes.featuredBadgeBgColor || '#2563eb';
         const featuredBadgeTextColor = attributes.featuredBadgeTextColor || '#ffffff';
         const sectionBgColor = attributes.sectionBgColor || '#ffffff';
+
+        // Spacing attributes
+        const sectionSpacing = attributes.sectionSpacing ?? 80;
+        const cardPadding = attributes.cardPadding ?? 28;
+        const gridGap = attributes.gridGap ?? 20;
 
         const cards = attributes.cards || [
             {
@@ -231,23 +236,57 @@ registerBlockType('tascom/pricing-scale', {
                             }
                         ]}
                     />
+
+                    {/* Spacing Settings */}
+                    <PanelBody title="Spacing" initialOpen={false}>
+                        <RangeControl
+                            label="Section Spacing (Top/Bottom)"
+                            value={sectionSpacing}
+                            onChange={(value) => setAttributes({ sectionSpacing: value })}
+                            min={0}
+                            max={200}
+                            step={4}
+                            help="Vertical padding for the section"
+                        />
+                        <RangeControl
+                            label="Card Padding"
+                            value={cardPadding}
+                            onChange={(value) => setAttributes({ cardPadding: value })}
+                            min={16}
+                            max={60}
+                            step={2}
+                            help="Internal padding for pricing cards"
+                        />
+                        <RangeControl
+                            label="Grid Gap"
+                            value={gridGap}
+                            onChange={(value) => setAttributes({ gridGap: value })}
+                            min={0}
+                            max={60}
+                            step={4}
+                            help="Space between pricing cards"
+                        />
+                    </PanelBody>
                 </InspectorControls>
 
-                <section className="section" style={{ backgroundColor: sectionBgColor }}>
+                <section className="section" style={{ backgroundColor: sectionBgColor, paddingTop: `${sectionSpacing}px`, paddingBottom: `${sectionSpacing}px` }}>
                     <div className="container">
                         <div className="section-header center">
                             <h2 className="section-title">{sectionTitle}</h2>
                             <p className="section-desc">{sectionDescription}</p>
                         </div>
-                        <div className="pricing-grid">
+                        <div className="pricing-grid" style={{ gap: `${gridGap}px` }}>
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
                                     className={`pricing-card ${card.featured ? 'featured' : ''}`}
                                     style={card.featured ? {
                                         borderColor: featuredBorderColor,
-                                        position: 'relative'
-                                    } : {}}
+                                        position: 'relative',
+                                        padding: `${cardPadding}px`
+                                    } : {
+                                        padding: `${cardPadding}px`
+                                    }}
                                 >
                                     {card.featured && (
                                         <span

@@ -31,19 +31,24 @@ $featured_badge_bg_color = $attributes['featuredBadgeBgColor'] ?? '#2563eb';
 $featured_badge_text_color = $attributes['featuredBadgeTextColor'] ?? '#ffffff';
 $section_bg_color = $attributes['sectionBgColor'] ?? '#ffffff';
 
+// Spacing attributes
+$section_spacing = $attributes['sectionSpacing'] ?? 80;
+$card_padding = $attributes['cardPadding'] ?? 28;
+$grid_gap = $attributes['gridGap'] ?? 20;
+
 // Get block wrapper attributes
 $wrapper_attributes = get_block_wrapper_attributes([
     'class' => 'section'
 ]);
 ?>
 
-<section <?php echo $wrapper_attributes; ?> style="background-color: <?php echo esc_attr($section_bg_color); ?>;">
+<section <?php echo $wrapper_attributes; ?> style="background-color: <?php echo esc_attr($section_bg_color); ?>; padding-top: <?php echo esc_attr($section_spacing); ?>px; padding-bottom: <?php echo esc_attr($section_spacing); ?>px;">
     <div class="container">
         <div class="section-header center tascom-feature-comparison-section-header">
             <h2 class="section-title"><?php echo esc_html($section_title); ?></h2>
             <p class="section-desc"><?php echo esc_html($section_description); ?></p>
         </div>
-        <div class="pricing-grid">
+        <div class="pricing-grid" style="gap: <?php echo esc_attr($grid_gap); ?>px;">
             <?php foreach ($cards as $card) : ?>
                 <?php
                 $team_size = $card['teamSize'] ?? '';
@@ -53,7 +58,10 @@ $wrapper_attributes = get_block_wrapper_attributes([
                 $featured = $card['featured'] ?? false;
 
                 // Build card style
-                $card_style = $featured ? 'border-color: ' . esc_attr($featured_border_color) . '; position: relative;' : '';
+                $card_style = 'padding: ' . esc_attr($card_padding) . 'px;';
+                if ($featured) {
+                    $card_style .= ' border-color: ' . esc_attr($featured_border_color) . '; position: relative;';
+                }
                 ?>
                 <div class="pricing-card <?php echo $featured ? 'featured' : ''; ?>" style="<?php echo $card_style; ?>">
                     <?php if ($featured) : ?>
