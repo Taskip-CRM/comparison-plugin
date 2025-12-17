@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
-import { InspectorControls, useBlockProps, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
-import { PanelBody, TextControl, Button } from '@wordpress/components';
+import { InspectorControls, useBlockProps, MediaUpload, MediaUploadCheck, PanelColorSettings } from '@wordpress/block-editor';
+import { PanelBody, TextControl, Button, RangeControl } from '@wordpress/components';
 import './editor.css';
 
 registerBlockType('tascom/ai-comparison', {
@@ -19,6 +19,14 @@ registerBlockType('tascom/ai-comparison', {
         const buttonTextColor = attributes.buttonTextColor || '#1e293b';
         const buttonHoverBgColor = attributes.buttonHoverBgColor || 'rgba(0, 0, 0, 0.08)';
         const buttonHoverBorderColor = attributes.buttonHoverBorderColor || 'rgba(0, 0, 0, 0.15)';
+
+        // Responsive padding
+        const paddingTopDesktop = attributes.paddingTopDesktop ?? 80;
+        const paddingBottomDesktop = attributes.paddingBottomDesktop ?? 80;
+        const paddingTopTablet = attributes.paddingTopTablet ?? 60;
+        const paddingBottomTablet = attributes.paddingBottomTablet ?? 60;
+        const paddingTopMobile = attributes.paddingTopMobile ?? 40;
+        const paddingBottomMobile = attributes.paddingBottomMobile ?? 40;
 
         // AI buttons with prompts
         const buttons = attributes.buttons || [
@@ -137,14 +145,74 @@ registerBlockType('tascom/ai-comparison', {
                             onChange={(value) => updateButtonPrompt(2, value)}
                         />
                     </PanelBody>
+
+                    <PanelBody title="Spacing" initialOpen={false}>
+                        <p style={{ fontWeight: 600, marginBottom: '8px' }}>Desktop (1025px+)</p>
+                        <RangeControl
+                            label="Padding Top"
+                            value={paddingTopDesktop}
+                            onChange={(value) => setAttributes({ paddingTopDesktop: value })}
+                            min={0}
+                            max={200}
+                            step={5}
+                        />
+                        <RangeControl
+                            label="Padding Bottom"
+                            value={paddingBottomDesktop}
+                            onChange={(value) => setAttributes({ paddingBottomDesktop: value })}
+                            min={0}
+                            max={200}
+                            step={5}
+                        />
+
+                        <hr style={{ margin: '20px 0' }} />
+
+                        <p style={{ fontWeight: 600, marginBottom: '8px' }}>Tablet (768px - 1024px)</p>
+                        <RangeControl
+                            label="Padding Top"
+                            value={paddingTopTablet}
+                            onChange={(value) => setAttributes({ paddingTopTablet: value })}
+                            min={0}
+                            max={200}
+                            step={5}
+                        />
+                        <RangeControl
+                            label="Padding Bottom"
+                            value={paddingBottomTablet}
+                            onChange={(value) => setAttributes({ paddingBottomTablet: value })}
+                            min={0}
+                            max={200}
+                            step={5}
+                        />
+
+                        <hr style={{ margin: '20px 0' }} />
+
+                        <p style={{ fontWeight: 600, marginBottom: '8px' }}>Mobile (0 - 767px)</p>
+                        <RangeControl
+                            label="Padding Top"
+                            value={paddingTopMobile}
+                            onChange={(value) => setAttributes({ paddingTopMobile: value })}
+                            min={0}
+                            max={200}
+                            step={5}
+                        />
+                        <RangeControl
+                            label="Padding Bottom"
+                            value={paddingBottomMobile}
+                            onChange={(value) => setAttributes({ paddingBottomMobile: value })}
+                            min={0}
+                            max={200}
+                            step={5}
+                        />
+                    </PanelBody>
                 </InspectorControls>
 
                 <section
                     className="tasp-comp-ai"
                     style={{
                         background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                        paddingTop: '80px',
-                        paddingBottom: '80px'
+                        paddingTop: `${paddingTopDesktop}px`,
+                        paddingBottom: `${paddingBottomDesktop}px`
                     }}
                 >
                     <div className="taskip-container-1408">
