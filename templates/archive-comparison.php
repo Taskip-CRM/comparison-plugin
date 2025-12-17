@@ -18,18 +18,11 @@ get_header();
 
         <header class="tascom-archive-header">
             <h1 class="tascom-archive-title">
-                <?php post_type_archive_title(); ?>
+                See How Taskip Compares
             </h1>
-            <?php
-            $archive_description = get_the_archive_description();
-            if ($archive_description) :
-                ?>
-                <div class="tascom-archive-description">
-                    <?php echo wp_kses_post(wpautop($archive_description)); ?>
-                </div>
-                <?php
-            endif;
-            ?>
+            <div class="tascom-archive-description">
+                Feature-by-feature comparisons with other client portal and agency management tools. No fluff—just facts.
+            </div>
         </header>
 
         <?php if (have_posts()) : ?>
@@ -55,18 +48,6 @@ get_header();
                             <h2 class="tascom-comparison-title">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
-
-                            <div class="tascom-comparison-meta">
-                                <span class="tascom-comparison-date">
-                                    <?php
-                                    printf(
-                                        esc_html__('%s', 'taskip-comparison'),
-                                        '<time datetime="' . esc_attr(get_the_date('c')) . '">' . esc_html(get_the_date()) . '</time>'
-                                    );
-                                    ?>
-                                </span>
-                            </div>
-
                             <?php if (has_excerpt()) : ?>
                                 <div class="tascom-comparison-excerpt">
                                     <?php the_excerpt(); ?>
@@ -75,7 +56,7 @@ get_header();
 
                             <div class="tascom-comparison-link">
                                 <a href="<?php the_permalink(); ?>" class="tascom-read-more">
-                                    <?php esc_html_e('Read More', 'taskip-comparison'); ?>
+                                    <?php esc_html_e('View Full Comparison', 'taskip-comparison'); ?>
                                     <span class="tascom-arrow">&rarr;</span>
                                 </a>
                             </div>

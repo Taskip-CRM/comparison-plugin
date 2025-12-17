@@ -8,7 +8,7 @@
 :root {
     --tasp-comp-dark: #0a0a0a;
     --tasp-comp-white: #ffffff;
-    --tasp-comp-primary: #0066FF;
+    --tasp-comp-primary: #00B289;
     --tasp-comp-secondary: #00c896;
     --tasp-comp-gray-400: #9ca3af;
     --tasp-comp-radius: 12px;
@@ -41,6 +41,7 @@
 .tasp-comp-verdict__content {
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
 .tasp-comp-verdict__label {
@@ -64,6 +65,9 @@
     line-height: 1.3;
     margin-bottom: 32px;
     max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 80px;
 }
 
 .tasp-comp-verdict__title em {
@@ -75,6 +79,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
+    text-align: left;
 }
 
 .tasp-comp-verdict__point {

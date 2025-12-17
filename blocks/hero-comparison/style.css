@@ -6,7 +6,7 @@
 
 /* CSS Variables */
 :root {
-    --tasp-comp-primary: #0066FF;
+    --tasp-comp-primary: #00B289;
     --tasp-comp-primary-light: rgba(0, 102, 255, 0.1);
     --tasp-comp-dark: #1a1a1a;
     --tasp-comp-gray-100: #f8f9fa;
@@ -61,7 +61,7 @@
     gap: 8px;
     padding: 8px 16px;
     background: var(--tasp-comp-primary-light);
-    color: var(--tasp-comp-primary);
+    color: var(--tasp-comp-dark);
     font-size: 14px;
     font-weight: 600;
     border-radius: var(--tasp-comp-radius-full);
@@ -74,9 +74,9 @@
 }
 
 .tasp-comp-hero__title {
-    font-family: var(--tasp-comp-font-display);
+    font-family: var(--body-font1);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.15;
     color: var(--tasp-comp-dark);
     margin-bottom: 24px;
@@ -85,6 +85,7 @@
 .tasp-comp-hero__title em {
     font-style: italic;
     color: var(--tasp-comp-primary);
+    font-family: var(--tasp-comp-font-display);
 }
 
 .tasp-comp-hero__subtitle {
@@ -123,8 +124,8 @@
 }
 
 .tasp-comp-btn--large {
-    padding: 16px 32px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
 .tasp-comp-btn--primary {
@@ -287,8 +288,8 @@
     }
 
     .tasp-comp-btn--large {
-        padding: 14px 24px;
-        font-size: 16px;
+        padding: 10px 24px;
+        font-size: 14px;
     }
 }
 
