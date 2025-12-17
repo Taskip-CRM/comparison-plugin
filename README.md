@@ -308,7 +308,7 @@ For issues or feature requests, please contact the Taskip development team.
 
 ## License
 
-Proprietary - Taskip CRM © 2024
+Proprietary - Taskip CRM © 2025
 
 ## Credits
 
