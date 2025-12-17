@@ -14,6 +14,7 @@ registerBlockType('tascom/migration', {
         const {
             eyebrowText,
             eyebrowColor,
+            eyebrowBgColor,
             title,
             description,
             features,
@@ -136,8 +137,13 @@ registerBlockType('tascom/migration', {
                             },
                             {
                                 value: eyebrowColor,
-                                onChange: (value) => setAttributes({ eyebrowColor: value || '#60a5fa' }),
-                                label: __('Eyebrow Color', 'taskip-comparison')
+                                onChange: (value) => setAttributes({ eyebrowColor: value || '#ffffff' }),
+                                label: __('Eyebrow Text Color', 'taskip-comparison')
+                            },
+                            {
+                                value: eyebrowBgColor,
+                                onChange: (value) => setAttributes({ eyebrowBgColor: value || 'rgba(255, 255, 255, 0.1)' }),
+                                label: __('Eyebrow Background', 'taskip-comparison')
                             },
                             {
                                 value: titleColor,
@@ -176,7 +182,7 @@ registerBlockType('tascom/migration', {
                             },
                             {
                                 value: buttonBgColor,
-                                onChange: (value) => setAttributes({ buttonBgColor: value || '#0066FF' }),
+                                onChange: (value) => setAttributes({ buttonBgColor: value || '#10b981' }),
                                 label: __('Button Background', 'taskip-comparison')
                             },
                             {
@@ -331,7 +337,7 @@ registerBlockType('tascom/migration', {
                     <div className="taskip-container-1408">
                         <div className="tasp-comp-migration__grid">
                             <div className="tasp-comp-migration__content">
-                                <p className="tasp-comp-migration__eyebrow" style={{ color: eyebrowColor }}>
+                                <p className="tasp-comp-migration__eyebrow" style={{ color: eyebrowColor, backgroundColor: eyebrowBgColor }}>
                                     {eyebrowText}
                                 </p>
                                 <h2 className="tasp-comp-migration__title" style={{ color: titleColor }}>

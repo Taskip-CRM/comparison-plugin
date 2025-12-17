@@ -20,7 +20,11 @@
     },
     "eyebrowColor": {
       "type": "string",
-      "default": "#60a5fa"
+      "default": "#ffffff"
+    },
+    "eyebrowBgColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.1)"
     },
     "title": {
       "type": "string",
@@ -98,7 +102,7 @@
     },
     "buttonBgColor": {
       "type": "string",
-      "default": "#0066FF"
+      "default": "#10b981"
     },
     "buttonTextColor": {
       "type": "string",

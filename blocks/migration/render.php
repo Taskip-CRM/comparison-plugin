@@ -15,7 +15,8 @@ if (!defined('ABSPATH')) {
 
 // Extract attributes with defaults
 $eyebrow_text = $attributes['eyebrowText'] ?? 'Migration Support';
-$eyebrow_color = $attributes['eyebrowColor'] ?? '#60a5fa';
+$eyebrow_color = $attributes['eyebrowColor'] ?? '#ffffff';
+$eyebrow_bg_color = $attributes['eyebrowBgColor'] ?? 'rgba(255, 255, 255, 0.1)';
 $title = $attributes['title'] ?? 'Seamless Transition';
 $description = $attributes['description'] ?? 'Our dedicated team ensures a smooth migration with minimal disruption to your operations.';
 $features = $attributes['features'] ?? [];
@@ -32,7 +33,7 @@ $feature_check_bg_color = $attributes['featureCheckBgColor'] ?? '#10b981';
 $testimonial_bg_color = $attributes['testimonialBgColor'] ?? 'rgba(255, 255, 255, 0.05)';
 $testimonial_border_color = $attributes['testimonialBorderColor'] ?? 'rgba(255, 255, 255, 0.1)';
 $testimonial_text_color = $attributes['testimonialTextColor'] ?? '#d1d5db';
-$button_bg_color = $attributes['buttonBgColor'] ?? '#0066FF';
+$button_bg_color = $attributes['buttonBgColor'] ?? '#10b981';
 $button_text_color = $attributes['buttonTextColor'] ?? '#ffffff';
 
 // Responsive padding
@@ -63,6 +64,7 @@ $wrapper_attributes = get_block_wrapper_attributes([
 
     #<?php echo $block_id; ?> .tasp-comp-migration__eyebrow {
         color: <?php echo esc_attr($eyebrow_color); ?>;
+        background-color: <?php echo esc_attr($eyebrow_bg_color); ?>;
     }
 
     #<?php echo $block_id; ?> .tasp-comp-migration__title {
