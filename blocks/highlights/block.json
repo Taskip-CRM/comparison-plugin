@@ -31,13 +31,9 @@
       "type": "array",
       "default": []
     },
-    "titleGradientStart": {
+    "titleColor": {
       "type": "string",
-      "default": "#3b82f6"
-    },
-    "titleGradientEnd": {
-      "type": "string",
-      "default": "#10b981"
+      "default": "#1e293b"
     },
     "badgeGradientStart": {
       "type": "string",

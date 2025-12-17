@@ -21,8 +21,7 @@ $section_description = $attributes['sectionDescription'] ?? 'A deep dive into th
 $cards = $attributes['cards'] ?? [];
 
 // Color attributes
-$title_gradient_start = $attributes['titleGradientStart'] ?? '#3b82f6';
-$title_gradient_end = $attributes['titleGradientEnd'] ?? '#10b981';
+$title_color = $attributes['titleColor'] ?? '#1e293b';
 $badge_gradient_start = $attributes['badgeGradientStart'] ?? '#10b981';
 $badge_gradient_end = $attributes['badgeGradientEnd'] ?? '#059669';
 $badge_text_color = $attributes['badgeTextColor'] ?? '#ffffff';
@@ -49,7 +48,7 @@ $wrapper_attributes = get_block_wrapper_attributes([
                 ?>
                 <span
                     class="tasp-comp-gradient"
-                    style="background: linear-gradient(90deg, <?php echo esc_attr($title_gradient_start); ?>, <?php echo esc_attr($title_gradient_end); ?>); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
+                    style="color: <?php echo esc_attr($title_color); ?>;"
                 >
                     <?php echo esc_html($section_title_emphasis); ?>
                 </span>

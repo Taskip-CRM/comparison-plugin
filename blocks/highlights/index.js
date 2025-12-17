@@ -14,8 +14,7 @@ registerBlockType('tascom/highlights', {
         const sectionDescription = attributes.sectionDescription || 'A deep dive into the capabilities that separate Taskip from SuiteDash';
 
         // Color attributes
-        const titleGradientStart = attributes.titleGradientStart || '#3b82f6';
-        const titleGradientEnd = attributes.titleGradientEnd || '#10b981';
+        const titleColor = attributes.titleColor || '#1e293b';
         const badgeGradientStart = attributes.badgeGradientStart || '#10b981';
         const badgeGradientEnd = attributes.badgeGradientEnd || '#059669';
         const badgeTextColor = attributes.badgeTextColor || '#ffffff';
@@ -100,10 +99,10 @@ registerBlockType('tascom/highlights', {
                             onChange={(value) => setAttributes({ sectionTitle: value })}
                         />
                         <TextControl
-                            label="Title Emphasis (Gradient Text)"
+                            label="Title Emphasis"
                             value={sectionTitleEmphasis}
                             onChange={(value) => setAttributes({ sectionTitleEmphasis: value })}
-                            help="Part of title that will have gradient color"
+                            help="Part of title that will have custom color"
                         />
                         <div style={{ marginTop: '16px' }}>
                             <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600 }}>
@@ -131,14 +130,9 @@ registerBlockType('tascom/highlights', {
                         title="Title Colors"
                         colorSettings={[
                             {
-                                value: titleGradientStart,
-                                onChange: (value) => setAttributes({ titleGradientStart: value }),
-                                label: 'Title Gradient Start'
-                            },
-                            {
-                                value: titleGradientEnd,
-                                onChange: (value) => setAttributes({ titleGradientEnd: value }),
-                                label: 'Title Gradient End'
+                                value: titleColor,
+                                onChange: (value) => setAttributes({ titleColor: value }),
+                                label: 'Title Emphasis Color'
                             }
                         ]}
                     />
@@ -476,10 +470,7 @@ registerBlockType('tascom/highlights', {
                                 <span
                                     className="tasp-comp-gradient"
                                     style={{
-                                        background: `linear-gradient(90deg, ${titleGradientStart}, ${titleGradientEnd})`,
-                                        WebkitBackgroundClip: 'text',
-                                        WebkitTextFillColor: 'transparent',
-                                        backgroundClip: 'text'
+                                        color: titleColor
                                     }}
                                 >
                                     {sectionTitleEmphasis}
