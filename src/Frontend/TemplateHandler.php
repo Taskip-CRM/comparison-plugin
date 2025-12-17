@@ -170,7 +170,7 @@ class TemplateHandler {
     public function customize_archive_title($title) {
         if (is_post_type_archive('comparison')) {
             // Default archive title
-            $archive_title = __('Comparisons', 'taskip-comparison');
+            $archive_title = __('See How Taskip Compares', 'taskip-comparison');
 
             // Allow customization via filter
             $archive_title = apply_filters('tascom_archive_title', $archive_title);
