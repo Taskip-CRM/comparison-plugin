@@ -29,8 +29,6 @@ class ComparisonPostType {
      */
     public function __construct() {
         add_action('init', [$this, 'register']);
-        add_action('init', [$this, 'add_rewrite_rules']);
-        add_filter('post_type_link', [$this, 'custom_permalink'], 10, 2);
     }
 
     /**
@@ -72,9 +70,14 @@ class ComparisonPostType {
             'show_ui'            => true,
             'show_in_menu'       => true,
             'query_var'          => true,
-            'rewrite'            => false, // We'll handle this manually
+            'rewrite'            => [
+                'slug'       => 'comparison',
+                'with_front' => false,
+                'feeds'      => true,
+                'pages'      => true,
+            ],
             'capability_type'    => 'post',
-            'has_archive'        => true,
+            'has_archive'        => 'comparison',
             'hierarchical'       => false,
             'menu_position'      => 20,
             'menu_icon'          => 'dashicons-comparison',
@@ -94,34 +97,5 @@ class ComparisonPostType {
         ];
 
         register_post_type(self::POST_TYPE, $args);
-    }
-
-    /**
-     * Add custom rewrite rules for compare/post-slug
-     */
-    public function add_rewrite_rules() {
-        // Add rewrite rule for single comparison posts
-        add_rewrite_rule(
-            '^compare/([^/]+)/?$',
-            'index.php?post_type=' . self::POST_TYPE . '&name=$matches[1]',
-            'top'
-        );
-
-        // Add rewrite tag
-        add_rewrite_tag('%' . self::POST_TYPE . '%', '([^&]+)');
-    }
-
-    /**
-     * Custom permalink structure for comparison posts
-     *
-     * @param string $post_link The post's permalink.
-     * @param object $post The post object.
-     * @return string Modified permalink.
-     */
-    public function custom_permalink($post_link, $post) {
-        if (self::POST_TYPE === $post->post_type && 'publish' === $post->post_status) {
-            $post_link = home_url('compare/' . $post->post_name . '/');
-        }
-        return $post_link;
     }
 }
