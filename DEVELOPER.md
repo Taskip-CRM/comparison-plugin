@@ -358,19 +358,57 @@ Edit `blocks/pricing-scale/style.css`:
 
 #### 3. Rebuild the Block
 
-```bash
-# Rebuild specific block
-npm run build:scale
+**Rebuild Only the Block You Changed (Recommended - Fast!)**
 
-# Or rebuild all blocks
+```bash
+# Individual block build commands (1-2 seconds each)
+npm run build:hero          # Hero Comparison
+npm run build:trust         # Trust Bar
+npm run build:verdict       # Verdict
+npm run build:migration     # Migration Support
+npm run build:ai            # AI Comparison
+npm run build:highlights    # Highlights
+npm run build:pricing       # Pricing Comparison
+npm run build:features      # Feature Comparison
+npm run build:scale         # Pricing at Scale
+```
+
+**Example Workflow:**
+
+```bash
+# 1. You edited blocks/hero-comparison/style.css
+# 2. Rebuild only hero block (fast!)
+npm run build:hero
+
+# Output:
+# ✔ Compiled successfully in 1.2s
+# asset index.js 8.45 KiB [emitted]
+```
+
+**Or Rebuild All Blocks (Slower - 10-15 seconds)**
+
+```bash
 npm run build
 ```
+
+**What Happens During Build:**
+- Webpack processes `index.js`
+- Imports and compiles `style.css` and `editor.css`
+- Minifies JavaScript and CSS
+- Outputs to `blocks/[block-name]/build/`
+- Generates `index.js`, `index.css`, `index.asset.php`
+
+**Important Notes:**
+- Always rebuild after CSS changes (changes won't appear without rebuilding)
+- Build files are auto-generated - never edit them directly
+- Individual builds are much faster when working on one block
 
 #### 4. Clear Cache and Test
 
 - Clear browser cache
 - Hard refresh (Cmd+Shift+R / Ctrl+Shift+F5)
 - Test on both editor and frontend
+- Check browser console for errors
 
 ---
 

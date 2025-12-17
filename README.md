@@ -140,24 +140,49 @@ Pricing cards showing cost at different team sizes.
 
 ### Build Commands
 
+#### Build All Blocks (10-15 seconds)
+
 ```bash
-# Build all blocks
 npm run build
+```
 
-# Build individual blocks
+Use this for initial setup or when you've changed multiple blocks.
+
+#### Build Individual Blocks (1-2 seconds) ⚡ Recommended
+
+When you edit a specific block's CSS or JavaScript, rebuild only that block for faster development:
+
+```bash
+npm run build:hero          # Hero Comparison block
+npm run build:trust         # Trust Bar block
+npm run build:verdict       # Verdict block
+npm run build:migration     # Migration Support block
+npm run build:ai            # AI Comparison block
+npm run build:highlights    # Highlights block
+npm run build:pricing       # Pricing Comparison block
+npm run build:features      # Feature Comparison block
+npm run build:scale         # Pricing at Scale block
+```
+
+**Example Workflow:**
+
+```bash
+# 1. Edit CSS file
+vim blocks/hero-comparison/style.css
+
+# 2. Rebuild only that block (fast!)
 npm run build:hero
-npm run build:trust
-npm run build:verdict
-npm run build:migration
-npm run build:ai
-npm run build:highlights
-npm run build:pricing
-npm run build:features
-npm run build:scale
 
-# Development mode (watch mode)
+# 3. Refresh browser to see changes
+```
+
+#### Development Mode (Watch Mode)
+
+```bash
 npm run start
 ```
+
+Auto-rebuilds hero-comparison block on file changes. Note: Only watches one block at a time.
 
 ### Project Structure
 
