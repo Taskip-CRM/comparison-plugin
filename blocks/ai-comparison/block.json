@@ -72,31 +72,31 @@
     },
     "titleColor": {
       "type": "string",
-      "default": "#ffffff"
+      "default": "#1e293b"
     },
     "subtitleColor": {
       "type": "string",
-      "default": "#9ca3af"
+      "default": "#64748b"
     },
     "buttonBgColor": {
       "type": "string",
-      "default": "rgba(255, 255, 255, 0.1)"
+      "default": "rgba(0, 0, 0, 0.05)"
     },
     "buttonBorderColor": {
       "type": "string",
-      "default": "rgba(255, 255, 255, 0.15)"
+      "default": "rgba(0, 0, 0, 0.1)"
     },
     "buttonTextColor": {
       "type": "string",
-      "default": "#ffffff"
+      "default": "#1e293b"
     },
     "buttonHoverBgColor": {
       "type": "string",
-      "default": "rgba(255, 255, 255, 0.15)"
+      "default": "rgba(0, 0, 0, 0.08)"
     },
     "buttonHoverBorderColor": {
       "type": "string",
-      "default": "rgba(255, 255, 255, 0.25)"
+      "default": "rgba(0, 0, 0, 0.15)"
     },
     "paddingTopDesktop": {
       "type": "number",

@@ -30,13 +30,13 @@ $section_bg_gradient_end = $attributes['sectionBgGradientEnd'] ?? '#f1f5f9';
 $icon_bg_gradient_start = $attributes['iconBgGradientStart'] ?? '#0066FF';
 $icon_bg_gradient_end = $attributes['iconBgGradientEnd'] ?? '#00D4FF';
 $icon_color = $attributes['iconColor'] ?? '#ffffff';
-$title_color = $attributes['titleColor'] ?? '#ffffff';
-$subtitle_color = $attributes['subtitleColor'] ?? '#9ca3af';
-$button_bg_color = $attributes['buttonBgColor'] ?? 'rgba(255, 255, 255, 0.1)';
-$button_border_color = $attributes['buttonBorderColor'] ?? 'rgba(255, 255, 255, 0.15)';
-$button_text_color = $attributes['buttonTextColor'] ?? '#ffffff';
-$button_hover_bg_color = $attributes['buttonHoverBgColor'] ?? 'rgba(255, 255, 255, 0.15)';
-$button_hover_border_color = $attributes['buttonHoverBorderColor'] ?? 'rgba(255, 255, 255, 0.25)';
+$title_color = $attributes['titleColor'] ?? '#1e293b';
+$subtitle_color = $attributes['subtitleColor'] ?? '#64748b';
+$button_bg_color = $attributes['buttonBgColor'] ?? 'rgba(0, 0, 0, 0.05)';
+$button_border_color = $attributes['buttonBorderColor'] ?? 'rgba(0, 0, 0, 0.1)';
+$button_text_color = $attributes['buttonTextColor'] ?? '#1e293b';
+$button_hover_bg_color = $attributes['buttonHoverBgColor'] ?? 'rgba(0, 0, 0, 0.08)';
+$button_hover_border_color = $attributes['buttonHoverBorderColor'] ?? 'rgba(0, 0, 0, 0.15)';
 
 // Responsive padding
 $padding_top_desktop = $attributes['paddingTopDesktop'] ?? 80;

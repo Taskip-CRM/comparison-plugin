@@ -12,6 +12,13 @@ registerBlockType('tascom/ai-comparison', {
         const subtitle = attributes.subtitle || 'Get an unbiased summary from your favorite AI assistant';
         const leftIconUrl = attributes.leftIconUrl || '';
         const rightIconUrl = attributes.rightIconUrl || '';
+        const titleColor = attributes.titleColor || '#1e293b';
+        const subtitleColor = attributes.subtitleColor || '#64748b';
+        const buttonBgColor = attributes.buttonBgColor || 'rgba(0, 0, 0, 0.05)';
+        const buttonBorderColor = attributes.buttonBorderColor || 'rgba(0, 0, 0, 0.1)';
+        const buttonTextColor = attributes.buttonTextColor || '#1e293b';
+        const buttonHoverBgColor = attributes.buttonHoverBgColor || 'rgba(0, 0, 0, 0.08)';
+        const buttonHoverBorderColor = attributes.buttonHoverBorderColor || 'rgba(0, 0, 0, 0.15)';
 
         // AI buttons with prompts
         const buttons = attributes.buttons || [
@@ -159,10 +166,10 @@ registerBlockType('tascom/ai-comparison', {
                                     <div style={{ width: '64px', height: '64px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '12px', border: '2px dashed rgba(255, 255, 255, 0.3)' }}></div>
                                 )}
                             </div>
-                            <h2 className="tasp-comp-ai__title" style={{ color: '#ffffff' }}>
+                            <h2 className="tasp-comp-ai__title" style={{ color: titleColor }}>
                                 {title}
                             </h2>
-                            <p className="tasp-comp-ai__subtitle" style={{ color: '#9ca3af' }}>
+                            <p className="tasp-comp-ai__subtitle" style={{ color: subtitleColor }}>
                                 {subtitle}
                             </p>
                             <div className="tasp-comp-ai__buttons">
@@ -176,9 +183,9 @@ registerBlockType('tascom/ai-comparison', {
                                             href="#"
                                             className="tasp-comp-ai__btn"
                                             style={{
-                                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                                borderColor: 'rgba(255, 255, 255, 0.15)',
-                                                color: '#ffffff'
+                                                backgroundColor: buttonBgColor,
+                                                borderColor: buttonBorderColor,
+                                                color: buttonTextColor
                                             }}
                                             onClick={(e) => e.preventDefault()}
                                         >
