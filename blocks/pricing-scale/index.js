@@ -22,7 +22,7 @@ registerBlockType('tascom/pricing-scale', {
         const featuredBorderColor = attributes.featuredBorderColor || '#2563eb';
         const featuredBadgeBgColor = attributes.featuredBadgeBgColor || '#2563eb';
         const featuredBadgeTextColor = attributes.featuredBadgeTextColor || '#ffffff';
-        const sectionBgColor = attributes.sectionBgColor || '#ffffff';
+        const sectionBgColor = attributes.sectionBgColor || '#0a0a0a';
 
         // Spacing attributes
         const sectionSpacing = attributes.sectionSpacing ?? 80;

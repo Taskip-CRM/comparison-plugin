@@ -29,7 +29,7 @@ $savings_text_color = $attributes['savingsTextColor'] ?? '#166534';
 $featured_border_color = $attributes['featuredBorderColor'] ?? '#2563eb';
 $featured_badge_bg_color = $attributes['featuredBadgeBgColor'] ?? '#2563eb';
 $featured_badge_text_color = $attributes['featuredBadgeTextColor'] ?? '#ffffff';
-$section_bg_color = $attributes['sectionBgColor'] ?? '#ffffff';
+$section_bg_color = $attributes['sectionBgColor'] ?? '#0a0a0a';
 
 // Spacing attributes
 $section_spacing = $attributes['sectionSpacing'] ?? 80;

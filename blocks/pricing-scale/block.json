@@ -94,7 +94,7 @@
     },
     "sectionBgColor": {
       "type": "string",
-      "default": "#ffffff"
+      "default": "#0a0a0a"
     },
     "sectionSpacing": {
       "type": "number",
