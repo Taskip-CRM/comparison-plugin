@@ -1,6 +1,21 @@
 /* Feature Comparison Table Block */
+.section-eyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--tasp-comp-primary-light);
+    color: var(--tasp-comp-dark);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--tasp-comp-radius-full);
+    margin-bottom: 50px;
+}
 .section-header.center {
     text-align: center;
+}
+.tascom-feature-comparison-section-header{
+    margin-bottom: 80px;
 }
 
 .table-wrap {

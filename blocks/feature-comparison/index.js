@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { InspectorControls, useBlockProps, PanelColorSettings } from '@wordpress/block-editor';
-import { PanelBody, TextControl, Button, SelectControl } from '@wordpress/components';
+import { PanelBody, TextControl, Button, SelectControl, RangeControl } from '@wordpress/components';
 import './editor.css';
 
 registerBlockType('tascom/feature-comparison', {
@@ -25,6 +25,12 @@ registerBlockType('tascom/feature-comparison', {
         const headerTextColor = attributes.headerTextColor || '#ffffff';
         const categoryBgColor = attributes.categoryBgColor || '#f3f4f6';
         const categoryTextColor = attributes.categoryTextColor || '#6b7280';
+
+        // Spacing attributes
+        const sectionSpacing = attributes.sectionSpacing ?? 80;
+        const headerPadding = attributes.headerPadding ?? 16;
+        const cellPadding = attributes.cellPadding ?? 14;
+        const categoryPadding = attributes.categoryPadding ?? 14;
 
         const categories = attributes.categories || [
             {
@@ -351,9 +357,49 @@ registerBlockType('tascom/feature-comparison', {
                             }
                         ]}
                     />
+
+                    {/* Spacing Settings */}
+                    <PanelBody title="Spacing" initialOpen={false}>
+                        <RangeControl
+                            label="Section Spacing (Top/Bottom)"
+                            value={sectionSpacing}
+                            onChange={(value) => setAttributes({ sectionSpacing: value })}
+                            min={0}
+                            max={200}
+                            step={4}
+                            help="Vertical padding for the section"
+                        />
+                        <RangeControl
+                            label="Header Cell Padding"
+                            value={headerPadding}
+                            onChange={(value) => setAttributes({ headerPadding: value })}
+                            min={8}
+                            max={40}
+                            step={2}
+                            help="Padding for table header cells"
+                        />
+                        <RangeControl
+                            label="Regular Cell Padding"
+                            value={cellPadding}
+                            onChange={(value) => setAttributes({ cellPadding: value })}
+                            min={8}
+                            max={40}
+                            step={2}
+                            help="Padding for table data cells"
+                        />
+                        <RangeControl
+                            label="Category Row Padding"
+                            value={categoryPadding}
+                            onChange={(value) => setAttributes({ categoryPadding: value })}
+                            min={8}
+                            max={40}
+                            step={2}
+                            help="Padding for category header rows"
+                        />
+                    </PanelBody>
                 </InspectorControls>
 
-                <section className="section section-alt">
+                <section className="section section-alt" style={{ paddingTop: `${sectionSpacing}px`, paddingBottom: `${sectionSpacing}px` }}>
                     <div className="container">
                         <div className="section-header center">
                             <p className="section-eyebrow">{sectionEyebrow}</p>
@@ -363,24 +409,24 @@ registerBlockType('tascom/feature-comparison', {
                             <table className="comp-table">
                                 <thead>
                                     <tr style={{ background: headerBgColor, color: headerTextColor }}>
-                                        <th>{headerColumn1}</th>
-                                        <th>{headerColumn2}</th>
-                                        <th>{headerColumn3}</th>
+                                        <th style={{ padding: `${headerPadding}px 20px` }}>{headerColumn1}</th>
+                                        <th style={{ padding: `${headerPadding}px 20px` }}>{headerColumn2}</th>
+                                        <th style={{ padding: `${headerPadding}px 20px` }}>{headerColumn3}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {categories.map((category, catIdx) => (
                                         <React.Fragment key={catIdx}>
                                             <tr className="cat">
-                                                <td colSpan="3" style={{ background: categoryBgColor, color: categoryTextColor }}>{category.name}</td>
+                                                <td colSpan="3" style={{ background: categoryBgColor, color: categoryTextColor, padding: `${categoryPadding}px 20px` }}>{category.name}</td>
                                             </tr>
                                             {category.rows.map((row, rowIdx) => (
                                                 <tr key={rowIdx}>
-                                                    <td>{row.feature}</td>
-                                                    <td>
+                                                    <td style={{ padding: `${cellPadding}px 20px` }}>{row.feature}</td>
+                                                    <td style={{ padding: `${cellPadding}px 20px` }}>
                                                         {renderCell(row.col2Type, row.col2Text, row.col2Badge)}
                                                     </td>
-                                                    <td>
+                                                    <td style={{ padding: `${cellPadding}px 20px` }}>
                                                         {renderCell(row.col3Type, row.col3Text, row.col3Badge)}
                                                     </td>
                                                 </tr>

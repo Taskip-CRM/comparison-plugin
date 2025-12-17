@@ -71,6 +71,22 @@
       "type": "string",
       "default": "#6b7280"
     },
+    "sectionSpacing": {
+      "type": "number",
+      "default": 80
+    },
+    "headerPadding": {
+      "type": "number",
+      "default": 16
+    },
+    "cellPadding": {
+      "type": "number",
+      "default": 14
+    },
+    "categoryPadding": {
+      "type": "number",
+      "default": 14
+    },
     "categories": {
       "type": "array",
       "default": [

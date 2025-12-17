@@ -33,6 +33,12 @@ $header_text_color = $attributes['headerTextColor'] ?? '#ffffff';
 $category_bg_color = $attributes['categoryBgColor'] ?? '#f3f4f6';
 $category_text_color = $attributes['categoryTextColor'] ?? '#6b7280';
 
+// Spacing attributes
+$section_spacing = $attributes['sectionSpacing'] ?? 80;
+$header_padding = $attributes['headerPadding'] ?? 16;
+$cell_padding = $attributes['cellPadding'] ?? 14;
+$category_padding = $attributes['categoryPadding'] ?? 14;
+
 // Get block wrapper attributes
 $wrapper_attributes = get_block_wrapper_attributes([
     'class' => 'section section-alt'
@@ -78,9 +84,9 @@ $colors = [
 ];
 ?>
 
-<section <?php echo $wrapper_attributes; ?>>
+<section <?php echo $wrapper_attributes; ?> style="padding-top: <?php echo esc_attr($section_spacing); ?>px; padding-bottom: <?php echo esc_attr($section_spacing); ?>px;">
     <div class="container">
-        <div class="section-header center">
+        <div class="section-header center tascom-feature-comparison-section-header">
             <p class="section-eyebrow"><?php echo esc_html($section_eyebrow); ?></p>
             <h2 class="section-title"><?php echo esc_html($section_title); ?></h2>
         </div>
@@ -88,9 +94,9 @@ $colors = [
             <table class="comp-table">
                 <thead>
                     <tr style="background: <?php echo esc_attr($header_bg_color); ?>; color: <?php echo esc_attr($header_text_color); ?>;">
-                        <th><?php echo esc_html($header_column1); ?></th>
-                        <th><?php echo esc_html($header_column2); ?></th>
-                        <th><?php echo esc_html($header_column3); ?></th>
+                        <th style="padding: <?php echo esc_attr($header_padding); ?>px 20px;"><?php echo esc_html($header_column1); ?></th>
+                        <th style="padding: <?php echo esc_attr($header_padding); ?>px 20px;"><?php echo esc_html($header_column2); ?></th>
+                        <th style="padding: <?php echo esc_attr($header_padding); ?>px 20px;"><?php echo esc_html($header_column3); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -100,7 +106,7 @@ $colors = [
                         $rows = $category['rows'] ?? [];
                         ?>
                         <tr class="cat">
-                            <td colspan="3" style="background: <?php echo esc_attr($category_bg_color); ?>; color: <?php echo esc_attr($category_text_color); ?>;">
+                            <td colspan="3" style="background: <?php echo esc_attr($category_bg_color); ?>; color: <?php echo esc_attr($category_text_color); ?>; padding: <?php echo esc_attr($category_padding); ?>px 20px;">
                                 <?php echo esc_html($category_name); ?>
                             </td>
                         </tr>
@@ -115,9 +121,9 @@ $colors = [
                             $col3_badge = $row['col3Badge'] ?? '';
                             ?>
                             <tr>
-                                <td><?php echo esc_html($feature); ?></td>
-                                <td><?php echo $render_table_cell($col2_type, $col2_text, $col2_badge, $colors); ?></td>
-                                <td><?php echo $render_table_cell($col3_type, $col3_text, $col3_badge, $colors); ?></td>
+                                <td style="padding: <?php echo esc_attr($cell_padding); ?>px 20px;"><?php echo esc_html($feature); ?></td>
+                                <td style="padding: <?php echo esc_attr($cell_padding); ?>px 20px;"><?php echo $render_table_cell($col2_type, $col2_text, $col2_badge, $colors); ?></td>
+                                <td style="padding: <?php echo esc_attr($cell_padding); ?>px 20px;"><?php echo $render_table_cell($col3_type, $col3_text, $col3_badge, $colors); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
