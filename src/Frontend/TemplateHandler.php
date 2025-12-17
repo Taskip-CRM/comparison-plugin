@@ -33,6 +33,10 @@ class TemplateHandler {
         add_filter('template_include', [$this, 'load_template'], 99);
         add_filter('single_template', [$this, 'load_single_template'], 99);
         add_filter('archive_template', [$this, 'load_archive_template'], 99);
+
+        // SEO customization
+        add_filter('document_title_parts', [$this, 'customize_archive_title'], 10);
+        add_action('wp_head', [$this, 'add_meta_description'], 1);
     }
 
     /**
@@ -154,6 +158,59 @@ class TemplateHandler {
         $plugin_template = TASCOM_PLUGIN_DIR . 'templates/' . $template_name;
         if (file_exists($plugin_template)) {
             load_template($plugin_template, false, $args);
+        }
+    }
+
+    /**
+     * Customize archive page title
+     *
+     * @param array $title Title parts array.
+     * @return array Modified title parts.
+     */
+    public function customize_archive_title($title) {
+        if (is_post_type_archive('comparison')) {
+            // Default archive title
+            $archive_title = __('Comparisons', 'taskip-comparison');
+
+            // Allow customization via filter
+            $archive_title = apply_filters('tascom_archive_title', $archive_title);
+
+            $title['title'] = $archive_title;
+        }
+
+        return $title;
+    }
+
+    /**
+     * Add custom meta description for archive page
+     */
+    public function add_meta_description() {
+        if (is_post_type_archive('comparison')) {
+            // Default meta description
+            $meta_description = __('Browse all product comparisons to find the best solution for your needs.', 'taskip-comparison');
+
+            // Allow customization via filter
+            $meta_description = apply_filters('tascom_archive_meta_description', $meta_description);
+
+            if (!empty($meta_description)) {
+                echo '<meta name="description" content="' . esc_attr($meta_description) . '">' . "\n";
+            }
+        }
+
+        if (is_singular('comparison')) {
+            global $post;
+
+            // Use excerpt as meta description for single posts
+            $meta_description = !empty($post->post_excerpt)
+                ? $post->post_excerpt
+                : wp_trim_words($post->post_content, 30, '...');
+
+            // Allow customization via filter
+            $meta_description = apply_filters('tascom_single_meta_description', $meta_description, $post);
+
+            if (!empty($meta_description)) {
+                echo '<meta name="description" content="' . esc_attr(strip_tags($meta_description)) . '">' . "\n";
+            }
         }
     }
 }
