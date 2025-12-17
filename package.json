@@ -1,6 +1,6 @@
 {
   "name": "taskip-comparison",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Custom post type for comparison content with Gutenberg support",
   "author": "Taskip",
   "license": "GPL-2.0-or-later",
